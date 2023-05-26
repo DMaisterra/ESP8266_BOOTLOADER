@@ -24,7 +24,7 @@ all:
 	xtensa-lx106-elf-objcopy --only-section .rodata -O binary $(ELF_FILE) $(RODATA_FILE)
 	xtensa-lx106-elf-nm -g $(ELF_FILE) > $(SYM_FILE)
 	xtensa-lx106-elf-objdump -a -f -h -D $(ELF_FILE) > $(DMP_FILE)
-	python gen_binary.py $(SYM_FILE) $(TEXT_FILE) $(RODATA_FILE) $(BIN_FILE)
+	python2 gen_binary.py $(SYM_FILE) $(TEXT_FILE) $(RODATA_FILE) $(BIN_FILE)
 	#@rm -f $(TEXT_FILE)
 	#@rm -f $(RODATA_FILE)
 	#@rm -f $(SYM_FILE)
